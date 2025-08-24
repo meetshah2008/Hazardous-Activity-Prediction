@@ -62,4 +62,57 @@ python inference.py
 - Deep learning architecture using CNN + LSTM
 - Scripts for dataset preparation, training, and inference
 
+## Model Architecture
+
+Below is a high-level diagram of the pipeline used for hazardous activity prediction:
+
+```
++-------------------+      +---------------------+      +---------------------+      +---------------------+      +----------------------+
+|  Input Video Clip | ---> |  Frame Extraction   | ---> |   CNN (MobileNetV2) | ---> |  LSTM Sequence Model| ---> |  Classification Head |
++-------------------+      +---------------------+      +---------------------+      +---------------------+      +----------------------+
+         |                        |                             |                           |                              |
+         v                        v                             v                           v                              v
+   Short MP4 file         12 frames per video           512-dim feature/frame      Temporal feature sequence      Output: Normal/Hazardous
+```
+
+#### Detailed Flow
+
+1. **Input Video Clip**: Each MP4 video is split into 12 evenly sampled frames.
+2. **Preprocessing**: Frames are resized, augmented, and normalized.
+3. **CNN Feature Extraction**: Each frame passes through MobileNetV2 (pretrained), outputting a 1280-dim feature, then reduced to 512-dim.
+4. **LSTM Sequence Model**: The sequence of frame features is processed by an LSTM to capture temporal dependencies.
+5. **Classification Head**: The output from the last LSTM timestep is passed to a fully connected layer to predict `Normal` or `Hazardous`.
+
+---
+
+### **How to Add a Visual Diagram**
+
+If you want a graphical version, here's a suggested flow for your diagram tool:
+
+- **Input Video Clip (.mp4)**
+    ↓
+- **Frame Extraction (12 frames/video)**
+    ↓
+- **Image Preprocessing (resize, augment, normalize)**
+    ↓
+- **CNN (MobileNetV2) per frame**
+    ↓
+- **Feature Adjustment (1280 → 512 dim)**
+    ↓
+- **LSTM Sequence Modeling**
+    ↓
+- **Classification Head (FC, Dropout)**
+    ↓
+- **Prediction: Normal/Hazardous**
+
+After creating your diagram (e.g., `architecture.png`), add this to your README:
+
+```markdown
+![Model Architecture](architecture.png)
+```
+
+---
+
+Let me know if you want a ready-to-use SVG/PNG diagram file, or if you want to further customize the illustration for your README!
+
 
