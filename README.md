@@ -62,14 +62,4 @@ python inference.py
 - Deep learning architecture using CNN + LSTM
 - Scripts for dataset preparation, training, and inference
 
-## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
-
-## Contact
-
-For questions or suggestions, please open an issue or contact [your email/contact here].
