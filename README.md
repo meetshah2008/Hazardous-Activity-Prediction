@@ -1,6 +1,6 @@
-# Hazarduous Activity Prediction
+# Hazardous Activity Prediction
 
-Hazarduous Activity Prediction is a project designed to predict hazardous human activities using CNN + LSTM. 
+Hazardous Activity Prediction is a machine learning project that classifies short video clips as either **normal** or **hazardous** activities. The model combines Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) architectures to analyze spatial and temporal features in video data.
 
 ## Getting Started
 
@@ -9,11 +9,30 @@ Follow these steps to set up and run the project:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/hazarduous-activity-prediction.git
-cd hazarduous-activity-prediction
+git clone https://github.com/yourusername/hazardous-activity-prediction.git
+cd hazardous-activity-prediction
 ```
 
-### 2. Prepare the dataset
+### 2. Install requirements
+
+The project uses the following Python libraries:
+
+- torch
+- torchvision
+- numpy
+- opencv-python
+- pillow
+- scikit-learn
+- tqdm
+- requests
+
+Install them with:
+
+```bash
+pip install torch torchvision numpy opencv-python pillow scikit-learn tqdm requests
+```
+
+### 3. Prepare the dataset
 
 Run the dataset preparation script:
 
@@ -21,17 +40,17 @@ Run the dataset preparation script:
 python dataset.py
 ```
 
-### 3. Train the model
+### 4. Train the model
 
-Train your machine learning model using:
+Train the CNN + LSTM model with:
 
 ```bash
 python train.py
 ```
 
-### 4. Run inference
+### 5. Run inference
 
-Generate predictions using (if needed just change name of best model path ):
+Classify new video clips using:
 
 ```bash
 python inference.py
@@ -39,9 +58,9 @@ python inference.py
 
 ## Features
 
-- Data processing and preparation
-- Model training for hazardous activity detection
-- Inference for real-time or batch predictions
+- Classification of video clips as "normal" or "hazardous"
+- Deep learning architecture using CNN + LSTM
+- Scripts for dataset preparation, training, and inference
 
 ## Contributing
 
