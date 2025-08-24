@@ -15,22 +15,22 @@ cd hazardous-activity-prediction
 
 ### 2. Install requirements
 
-The project uses the following Python libraries:
+Install all dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+The project uses the following Python libraries (listed in `requirements.txt`):
 
 - torch
 - torchvision
 - numpy
 - opencv-python
-- pillow
+- Pillow
 - scikit-learn
 - tqdm
 - requests
-
-Install them with:
-
-```bash
-pip install torch torchvision numpy opencv-python pillow scikit-learn tqdm requests
-```
 
 ### 3. Prepare the dataset
 
