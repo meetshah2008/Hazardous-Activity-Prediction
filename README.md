@@ -1,6 +1,6 @@
 # Hazarduous Activity Prediction
 
-Hazarduous Activity Prediction is a project designed to predict hazardous human activities using machine learning. 
+Hazarduous Activity Prediction is a project designed to predict hazardous human activities using CNN + LSTM. 
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ python train.py
 
 ### 4. Run inference
 
-Generate predictions using:
+Generate predictions using (if needed just change name of best model path ):
 
 ```bash
 python inference.py
