@@ -5,6 +5,7 @@ from torchvision.models import mobilenet_v2
 import numpy as np
 import cv2
 from PIL import Image
+import os
 
 # Set device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -117,15 +118,15 @@ def classify_video(model, video_path):
     }
 
 # Main function
-def main():
+def main(video_path):
     # Load the trained model
     model = load_model('best_model_24_08_2025.pth')
     
     # Ask user for video path
-    video_path = input("Enter the path to your video file: ").strip()
-    
+    # video_path = input("Enter the path to your video file: ").strip()
+
     # Remove quotes if user dragged and dropped the file
-    video_path = video_path.strip('"')
+    # video_path = video_path.strip('"')
     
     try:
         # Classify the video
@@ -156,4 +157,9 @@ def main():
         print("3. The video format is supported (mp4, avi, mov, etc.)")
 
 if __name__ == "__main__":
-    main()
+
+    test_path = "Testing"
+    files = os.listdir(test_path)
+    for file in files:
+        video = os.path.join(test_path, file)
+        main(video)
