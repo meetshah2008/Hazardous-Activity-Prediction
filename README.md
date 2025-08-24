@@ -64,11 +64,12 @@ python inference.py
 
 ## Model Architecture
 
-Below is a high-level diagram of the pipeline used for hazardous activity prediction:
+Below is a high-level overview of the hazardous activity prediction pipeline:
 
-```markdown
 ![Model Architecture](Architecture.png)
-```
+
+<details>
+<summary>ASCII Diagram (click to expand)</summary>
 
 ```
 +-------------------+      +---------------------+      +---------------------+      +---------------------+      +----------------------+
@@ -78,6 +79,7 @@ Below is a high-level diagram of the pipeline used for hazardous activity predic
          v                        v                             v                           v                              v
    Short MP4 file         12 frames per video           512-dim feature/frame      Temporal feature sequence      Output: Normal/Hazardous
 ```
+</details>
 
 #### Detailed Flow
 
