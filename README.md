@@ -66,6 +66,10 @@ python inference.py
 
 Below is a high-level diagram of the pipeline used for hazardous activity prediction:
 
+```markdown
+![Model Architecture](architecture.png)
+```
+
 ```
 +-------------------+      +---------------------+      +---------------------+      +---------------------+      +----------------------+
 |  Input Video Clip | ---> |  Frame Extraction   | ---> |   CNN (MobileNetV2) | ---> |  LSTM Sequence Model| ---> |  Classification Head |
@@ -85,34 +89,6 @@ Below is a high-level diagram of the pipeline used for hazardous activity predic
 
 ---
 
-### **How to Add a Visual Diagram**
 
-If you want a graphical version, here's a suggested flow for your diagram tool:
-
-- **Input Video Clip (.mp4)**
-    ↓
-- **Frame Extraction (12 frames/video)**
-    ↓
-- **Image Preprocessing (resize, augment, normalize)**
-    ↓
-- **CNN (MobileNetV2) per frame**
-    ↓
-- **Feature Adjustment (1280 → 512 dim)**
-    ↓
-- **LSTM Sequence Modeling**
-    ↓
-- **Classification Head (FC, Dropout)**
-    ↓
-- **Prediction: Normal/Hazardous**
-
-After creating your diagram (e.g., `architecture.png`), add this to your README:
-
-```markdown
-![Model Architecture](architecture.png)
-```
-
----
-
-Let me know if you want a ready-to-use SVG/PNG diagram file, or if you want to further customize the illustration for your README!
 
 
