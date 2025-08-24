@@ -67,7 +67,7 @@ python inference.py
 Below is a high-level diagram of the pipeline used for hazardous activity prediction:
 
 ```markdown
-![Model Architecture](architecture.png)
+![Model Architecture](Architecture.png)
 ```
 
 ```
