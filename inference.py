@@ -6,6 +6,7 @@ import numpy as np
 import cv2
 from PIL import Image
 import os
+import sys
 
 # Set device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -133,21 +134,30 @@ def main(video_path):
         results = classify_video(model, video_path)
         
         # Display results
-        print("\n" + "="*50)
+        # print("\n" + "="*50)
+        # print("CLASSIFICATION RESULTS")
+        # print("="*50)
+        # print(f"Video: {video_path}")
+        # print(f"Prediction: {results['prediction']}")
+        # print(f"Confidence: {results['confidence']:.2%}")
+        # print(f"Normal Score: {results['normal_score']:.4f}")
+        # print(f"Hazard Score: {results['hazard_score']:.4f}")
+        # print("="*50)
+        
+        # # Interpretation
+        # if results['prediction'] == 'Hazard':
+        #     print("🚨 SAFETY HAZARD DETECTED! 🚨")
+        # else:
+        #     print("✅ No safety hazards detected")
+
+        print("="*50)
         print("CLASSIFICATION RESULTS")
         print("="*50)
-        print(f"Video: {video_path}")
         print(f"Prediction: {results['prediction']}")
         print(f"Confidence: {results['confidence']:.2%}")
         print(f"Normal Score: {results['normal_score']:.4f}")
         print(f"Hazard Score: {results['hazard_score']:.4f}")
         print("="*50)
-        
-        # Interpretation
-        if results['prediction'] == 'Hazard':
-            print("🚨 SAFETY HAZARD DETECTED! 🚨")
-        else:
-            print("✅ No safety hazards detected")
             
     except Exception as e:
         print(f"Error processing video: {e}")
@@ -157,9 +167,11 @@ def main(video_path):
         print("3. The video format is supported (mp4, avi, mov, etc.)")
 
 if __name__ == "__main__":
+    video_path = sys.argv[1]
+    main(video_path)
 
-    test_path = "Testing"
-    files = os.listdir(test_path)
-    for file in files:
-        video = os.path.join(test_path, file)
-        main(video)
+#     test_path = "Testing"
+#     files = os.listdir(test_path)
+#     for file in files:
+#         video = os.path.join(test_path, file)
+#         main(video)
